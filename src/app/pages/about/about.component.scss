@@ -1,0 +1,17 @@
+.profile {
+    max-height: 300px;
+}
+
+//from 1400px to larger size
+@media screen and (min-width: 1400px) {
+    .profile {
+        height: 250px;
+    }
+}
+
+//from 768px to smaller size
+@media screen and (max-width: 768px) {
+    .profile {
+        width: 200px;
+    }
+}
