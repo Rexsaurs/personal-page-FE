@@ -7,6 +7,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 
+import { TimelineModule } from 'primeng/timeline';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -14,7 +19,14 @@ import { ExperienceComponent } from './experience/experience.component';
     ContactComponent,
     ExperienceComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule],
+  imports: [
+    CommonModule,
+    PagesRoutingModule,
+    TimelineModule,
+    CardModule,
+    ButtonModule,
+    ScrollPanelModule,
+  ],
   exports: [
     HomeComponent,
     AboutComponent,

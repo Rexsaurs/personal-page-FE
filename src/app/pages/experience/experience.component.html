@@ -1,1 +1,39 @@
-<p>experience works!</p>
+<section id="experience">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row justify-content-lg-end justify-content-md-center">
+                <h2 class="d-flex justify-content-center col-12 fw-bolder my-4">
+                    02. Experience
+                </h2>
+            </div>
+            <p-timeline [value]="events1" align="alternate" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                    <span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color">
+                        <ng-container *ngIf="event.icon;else done">
+                            <i [ngClass]="event.icon"></i>
+                        </ng-container>
+                        <ng-template #done>
+                            <span>0{{event.number}}.</span>
+                        </ng-template>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.status" [subheader]="event.date">
+                        <p-scrollPanel [style]="{width: '100%', height: '100px'}" styleClass="custombar1">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur
+                                error
+                                repudiandae numquam deserunt
+                                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis
+                                esse, cupiditate
+                                neque quas!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, repudiandae modi,
+                                veritatis molestias cupiditate distinctio, expedita voluptate perferendis laborum
+                                eligendi sapiente quia harum suscipit. Dolore eveniet magni minus architecto reiciendis!
+                            </p>
+                        </p-scrollPanel>
+                    </p-card>
+                </ng-template>
+            </p-timeline>
+        </div>
+    </div>
+</section>
