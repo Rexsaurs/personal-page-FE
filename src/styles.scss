@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/variables.scss";
+
+body {
+  background-color: $base-color-light;
+}
+
 section {
   min-height: 70vh;
-  max-height: 900px;
+  max-height: 100vh;
 
   display: flex;
   -moz-box-pack: center;
@@ -17,6 +23,24 @@ section {
   section {
     padding: 20% 0;
   }
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 // Style for primeNG Scroll panel //
@@ -45,3 +69,21 @@ section {
   }
 }
 // Style for primeNG Scroll panel //
+
+.big-header {
+  margin: 0px;
+  font-size: clamp(30px, 5vw, 50px);
+}
+
+.row {
+  .btn {
+    min-width: 120px;
+  }
+
+  .btn-primary {
+    color: $base-color-dark;
+    border: 1px solid $base-color-dark;
+
+    background-color: $base-color-light;
+  }
+}
