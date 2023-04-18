@@ -68,6 +68,7 @@ h1,
     }
   }
 }
+
 // Style for primeNG Scroll panel //
 
 .big-header {
@@ -86,4 +87,12 @@ h1,
 
     background-color: $base-color-light;
   }
+}
+
+.p-timeline .p-timeline-event-connector {
+  background-color: $base-color-dark !important;
+}
+
+.custombar1 {
+  height: 150px;
 }
