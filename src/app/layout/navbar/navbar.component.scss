@@ -1,3 +1,5 @@
+@import '../../../assets/scss/variables.scss';
+
 @media screen and (max-width: 576px) {
   .navbar-brand {
     margin-left: 0px !important;
@@ -12,4 +14,20 @@
 
 .navbar {
   z-index: 2;
+}
+
+.navbar-brand {
+  color: $light-cyan;
+  font-weight: 800;
+
+  padding: 5px;
+  border: 2px solid $light-cyan;
+}
+
+.navbar-brand:hover {
+  background-color: $light-cyan-tint;
+}
+
+.nav-link:hover {
+  color: $light-cyan;
 }
