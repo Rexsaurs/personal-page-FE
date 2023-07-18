@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,19 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  @Input() onFragment = false;
+  visible = false;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  navigateSection() {
+    this.router.navigate(['/'], { fragment: 'about' });
+  }
+
+  isIntersecting(status: boolean) {
+    if (!status) return;
+    this.visible = true;
+  }
 }

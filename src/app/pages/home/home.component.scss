@@ -29,22 +29,3 @@
   position: relative;
   top: 50px;
 }
-
-a {
-  margin-top: 50px;
-
-  text-decoration: none;
-  font-weight: 700;
-
-  border: 2px solid $light-cyan;
-  border-radius: 4px;
-  background-color: $base-color-dark;
-  color: $light-cyan;
-
-  padding: 1rem;
-  transition: 0.5s;
-}
-
-a:hover {
-  background-color: $light-cyan-tint;
-}

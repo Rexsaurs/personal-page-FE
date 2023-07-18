@@ -2,7 +2,13 @@
 @import "./assets/scss/variables.scss";
 
 body {
-  background-color: $base-color-light;
+  background-color: $background-light;
+  color: $text-light;
+}
+
+.bg-dark {
+  background-color: $background-dark !important;
+  color: $text-dark !important;
 }
 
 section {
@@ -44,6 +50,10 @@ h1,
 }
 
 // Style for primeNG Scroll panel //
+.p-card {
+  box-shadow: 0 0 20px 1px $primary;
+}
+
 .p-scrollpanel {
   p {
     padding: 0.5rem;
@@ -57,13 +67,13 @@ h1,
     }
 
     .p-scrollpanel-bar {
-      background-color: var(--primary-color);
+      background-color: $accent;
       opacity: 1;
       transition: background-color 0.2s;
       z-index: 1;
 
       &:hover {
-        background-color: #007ad9;
+        background-color: $primary;
       }
     }
   }
@@ -76,19 +86,6 @@ h1,
   font-size: clamp(30px, 5vw, 50px);
 }
 
-.row {
-  .btn {
-    min-width: 120px;
-  }
-
-  .btn-primary {
-    color: $base-color-dark;
-    border: 1px solid $base-color-dark;
-
-    background-color: $base-color-light;
-  }
-}
-
 .p-timeline .p-timeline-event-connector {
   background-color: $base-color-dark !important;
 }
@@ -97,9 +94,6 @@ h1,
   height: 150px;
 }
 
-.bg-dark {
-  background-color: $base-color-dark !important;
-}
 
 
 footer {
@@ -146,3 +140,142 @@ footer {
   transform: translate3d(0, 0.2em, 0);
   transform: scale(1);
 }
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
+  transition: $property $duration $ease;
+}
+
+//Animations//
+.btn-animate {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $primary;
+      border-radius: 1.625rem;
+
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $text-dark;
+
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $text-light;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .circle {
+      width: 100%;
+
+      .icon {
+        &.arrow {
+          background: $text-dark;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+
+    .button-text {
+      color: $text-dark;
+    }
+  }
+}
+
+%slide-shared {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s linear, opacity 1s linear, transform 1s;
+}
+
+
+.slide-right {
+  transform: translateX(-100px);
+  @extend %slide-shared;
+}
+
+.slide-left {
+  transform: translateX(100px);
+  @extend %slide-shared;
+}
+
+.slide-bottom {
+  transform: translateY(-100px);
+  @extend %slide-shared;
+}
+
+.slide-top {
+  transform: translateY(100px);
+  @extend %slide-shared;
+
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s linear, opacity 1s linear;
+}
+
+.visible {
+  transform: translate(0, 0);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+//Animations//

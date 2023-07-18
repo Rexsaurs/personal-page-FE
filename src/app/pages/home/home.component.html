@@ -3,17 +3,39 @@
     <div class="content-wrapper">
       <div class="row justify-content-center">
         <div class="col-md-7 col-12 d-flex align-items-center">
-          <div class="row d-flex justify-content-end">
-            <h4 class="col-md-7 col-12 m-0 text-md-end text-center">
+          <div
+            class="row d-flex justify-content-end"
+            appSectionObserver
+            #intersection="intersection"
+            (isIntersecting)="isIntersecting($event)"
+            [isContinuous]="true"
+            [threshold]="0.5"
+          >
+            <h4
+              class="col-md-7 col-12 m-0 text-md-end text-center"
+              [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
+            >
               Welcome! My name is
             </h4>
-            <h2 class="col-md-12 col-12 text-md-end text-center big-header">
+            <h2
+              class="col-md-12 col-12 text-md-end text-center big-header"
+              [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
+              [ngStyle]="{ 'transition-delay': !onFragment ? '0.10s' : '' }"
+            >
               Tito Rhenaldi P.
             </h2>
-            <h2 class="col-md-12 col-12 text-md-end text-center big-header">
+            <h2
+              class="col-md-12 col-12 text-md-end text-center big-header"
+              [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
+              [ngStyle]="{ 'transition-delay': !onFragment ? '0.25s' : '' }"
+            >
               Building websites is my forte.
             </h2>
-            <p class="col-md-8 col-12 text-md-end text-center mt-3">
+            <p
+              class="col-md-8 col-12 text-md-end text-center mt-3"
+              [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
+              [ngStyle]="{ 'transition-delay': !onFragment ? '0.40s' : '' }"
+            >
               I'm a web developer specialized in building front-end and back-end
               application. Currently, I'm focused on creating a robust Business
               Supporting System (BSS) at PT. Pasifik Satelit Nusantara.
@@ -25,11 +47,23 @@
             src="../../../assets/picture/testimonial-1.jpg"
             alt="profile"
             class="img-fluid profile"
+            [ngClass]="{ visible: visible, 'slide-left': !onFragment }"
+            [ngStyle]="{ 'transition-delay': !onFragment ? '0.25s' : '' }"
           />
         </div>
       </div>
       <div class="row justify-content-center">
-        <a href="/#about" class="col-2 text-center">Learn more...</a>
+        <button
+          class="btn-animate learn-more"
+          [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
+          [ngStyle]="{ 'transition-delay': !onFragment ? '0.55s' : '' }"
+          (click)="navigateSection()"
+        >
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
       </div>
     </div>
   </div>

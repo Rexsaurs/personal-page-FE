@@ -7,21 +7,16 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { PagesModule } from './pages/pages.module';
-import { SectionObserverDirective } from './core/directives/section-observer.directive';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    NavbarComponent,
-    SectionObserverDirective,
-  ],
+  declarations: [AppComponent, FooterComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PagesModule,
     BrowserAnimationsModule,
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent],
 })

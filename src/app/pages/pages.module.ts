@@ -12,6 +12,8 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 
+import { SharedModule } from '../core/shared/shared.module';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -26,6 +28,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     CardModule,
     ButtonModule,
     ScrollPanelModule,
+    SharedModule,
   ],
   exports: [
     HomeComponent,
