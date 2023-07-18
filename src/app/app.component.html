@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 <div class="container min-vh-100">
   <div class="container-fluid">
-    <app-home></app-home>
+    <app-home [onFragment]="startOnFragment[0]"></app-home>
 
-    <app-about></app-about>
+    <app-about [onFragment]="startOnFragment[1]"></app-about>
 
-    <app-experience></app-experience>
+    <app-experience [onFragment]="startOnFragment[2]"></app-experience>
 
     <app-contact></app-contact>
   </div>

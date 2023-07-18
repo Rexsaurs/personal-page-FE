@@ -1,5 +1,15 @@
-<section id="about">
-  <div class="main-panel">
+<section
+  id="about"
+  appSectionObserver
+  #intersection="intersection"
+  (isIntersecting)="isIntersecting($event)"
+  [isContinuous]="true"
+  [threshold]="0.25"
+>
+  <div
+    [ngClass]="{ visible: visible }"
+    [class]="!onFragment ? 'main-panel slide-top' : 'main-panel'"
+  >
     <div class="content-wrapper">
       <div class="row justify-content-lg-end justify-content-md-center">
         <h2

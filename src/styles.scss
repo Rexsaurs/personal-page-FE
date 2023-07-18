@@ -51,7 +51,7 @@ h1,
 
 // Style for primeNG Scroll panel //
 .p-card {
-  background-color: $secondary;
+  box-shadow: 0 0 20px 1px $primary;
 }
 
 .p-scrollpanel {
@@ -145,6 +145,7 @@ footer {
   transition: $property $duration $ease;
 }
 
+//Animations//
 .btn-animate {
   position: relative;
   display: inline-block;
@@ -236,3 +237,45 @@ footer {
     }
   }
 }
+
+%slide-shared {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s linear, opacity 1s linear, transform 1s;
+}
+
+
+.slide-right {
+  transform: translateX(-100px);
+  @extend %slide-shared;
+}
+
+.slide-left {
+  transform: translateX(100px);
+  @extend %slide-shared;
+}
+
+.slide-bottom {
+  transform: translateY(-100px);
+  @extend %slide-shared;
+}
+
+.slide-top {
+  transform: translateY(100px);
+  @extend %slide-shared;
+
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s linear, opacity 1s linear;
+}
+
+.visible {
+  transform: translate(0, 0);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+//Animations//

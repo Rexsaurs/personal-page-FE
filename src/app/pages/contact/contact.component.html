@@ -1,5 +1,15 @@
-<section id="contact">
-  <div class="main-panel">
+<section
+  id="contact"
+  appSectionObserver
+  #intersection="intersection"
+  (isIntersecting)="isIntersecting($event)"
+  [isContinuous]="true"
+  [threshold]="0.5"
+>
+  <div
+    class="main-panel slide-top"
+    [ngClass]="{ '': !onFragment, visible: visible }"
+  >
     <div class="content-wrapper">
       <div class="card">
         <div class="card-inner pb-5">

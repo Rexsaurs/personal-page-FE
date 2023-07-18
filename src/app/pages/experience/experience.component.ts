@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 
 @Component({
@@ -7,8 +7,12 @@ import { PrimeIcons } from 'primeng/api';
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
+  @Input() onFragment = false;
+  visible = false;
+
   public events1: any[] = [
     {
+      id: 0,
       status: 'Graduated: Brawijaya University',
       date: '08/2017 - 07/2021',
       icon: PrimeIcons.CHECK_CIRCLE,
@@ -18,6 +22,7 @@ export class ExperienceComponent implements OnInit {
       While studying here, I've learned alot about the basic of programming, IT infrastructure management, and UI/UX. Beside that, I've also practice and honed my soft skill (such as my team work ability and communication skills).`,
     },
     {
+      id: 1,
       status: 'Working: PT. Pasifik Satelit Nusantara',
       date: '10/2021 - Ongoing',
       icon: PrimeIcons.BOOKMARK_FILL,
@@ -39,4 +44,18 @@ export class ExperienceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  isIntersecting(status: boolean) {
+    if (!status) return;
+    this.visible = true;
+  }
+
+  cardStyle(onFragment: boolean, visible: boolean, id: number) {
+    let fragment = '';
+    let displayed = '';
+
+    if (!onFragment) fragment = id % 2 == 0 ? 'slide-right' : 'slide-left';
+    if (visible) displayed = 'visible';
+    return `${fragment} ${displayed}`;
+  }
 }
