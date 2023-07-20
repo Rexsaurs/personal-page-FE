@@ -4,7 +4,7 @@
       <div class="row justify-content-center">
         <div class="col-md-7 col-12 d-flex align-items-center">
           <div
-            class="row d-flex justify-content-end"
+            class="row d-flex justify-content-center"
             appSectionObserver
             #intersection="intersection"
             (isIntersecting)="isIntersecting($event)"
@@ -12,27 +12,27 @@
             [threshold]="0.5"
           >
             <h4
-              class="col-md-7 col-12 m-0 text-md-end text-center"
+              class="col-md-7 col-12 m-0 text-md-center text-center"
               [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
             >
               Welcome! My name is
             </h4>
             <h2
-              class="col-md-12 col-12 text-md-end text-center big-header"
+              class="col-md-12 col-12 text-md-center text-center big-header"
               [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
               [ngStyle]="{ 'transition-delay': !onFragment ? '0.10s' : '' }"
             >
-              Tito Rhenaldi P.
+              Tito Rhenaldi Priono.
             </h2>
             <h2
-              class="col-md-12 col-12 text-md-end text-center big-header"
+              class="col-md-12 col-12 text-md-center text-center big-header"
               [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
               [ngStyle]="{ 'transition-delay': !onFragment ? '0.25s' : '' }"
             >
               Building websites is my forte.
             </h2>
             <p
-              class="col-md-8 col-12 text-md-end text-center mt-3"
+              class="col-md-8 col-12 text-md-center text-center mt-3"
               [ngClass]="{ visible: visible, 'slide-right': !onFragment }"
               [ngStyle]="{ 'transition-delay': !onFragment ? '0.40s' : '' }"
             >
@@ -41,15 +41,6 @@
               Supporting System (BSS) at PT. Pasifik Satelit Nusantara.
             </p>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-5 col-12 d-flex justify-content-center">
-          <img
-            src="../../../assets/picture/testimonial-1.jpg"
-            alt="profile"
-            class="img-fluid profile"
-            [ngClass]="{ visible: visible, 'slide-left': !onFragment }"
-            [ngStyle]="{ 'transition-delay': !onFragment ? '0.25s' : '' }"
-          />
         </div>
       </div>
       <div class="row justify-content-center">
