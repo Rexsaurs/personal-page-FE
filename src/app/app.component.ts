@@ -42,7 +42,5 @@ export class AppComponent implements OnInit, OnDestroy {
     for (let i = 0; i < fragment; i++) {
       this.startOnFragment[i] = true;
     }
-
-    console.log(this.startOnFragment);
   }
 }
