@@ -1,0 +1,41 @@
+@import "../../../assets/scss/variables.scss";
+
+$bg-height: 100%;
+$border-radius: 8px;
+
+#contact {
+  min-height: 80vh;
+}
+
+.main-panel {
+  position: relative;
+  top: -5vh;
+}
+
+a {
+  text-decoration: none;
+  color: $text-light;
+  position: relative;
+  background: linear-gradient(0deg, $primary, $primary ) no-repeat right bottom / 0 $bg-height;
+  transition: background-size 350ms, color 360ms;
+
+  &:where(:hover, :focus-visible) {
+    background-size: 100% $bg-height;
+    background-position-x: left;
+    color: $text-dark;
+  }
+}
+
+
+.card {
+  background-image: linear-gradient(163deg, $accent 0%, $light-cyan 100%);
+  border-radius: $border-radius;
+
+  box-shadow: 0px 0px 30px 1px $accent;
+}
+
+.card-inner {
+  background-color: #ffffff;
+  border-radius: $border-radius;
+  transform: scale(0.98, 0.95);
+}

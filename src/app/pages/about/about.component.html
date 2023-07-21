@@ -1,0 +1,76 @@
+<section
+  id="about"
+  appSectionObserver
+  #intersection="intersection"
+  (isIntersecting)="isIntersecting($event)"
+  [isContinuous]="true"
+  [threshold]="0.25"
+>
+  <div
+    [ngClass]="{ visible: visible }"
+    [class]="!onFragment ? 'main-panel slide-top' : 'main-panel'"
+  >
+    <div class="content-wrapper">
+      <div class="row justify-content-lg-end justify-content-md-center">
+        <h2
+          class="d-flex justify-content-lg-start justify-content-md-end col-lg-5 col-md-6 col-12 my-4 fw-bolder"
+        >
+          01. About Me
+        </h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 col-12 d-flex justify-content-center">
+          <img
+            src="../../../assets/picture/Tito Rhenaldi.jpg"
+            alt="profile"
+            class="img-fluid profile"
+          />
+        </div>
+        <div class="col-lg-5 col-md-6 col-12 d-flex align-items-center">
+          <div class="row">
+            <p class="col-md-12 col-12 text-start">
+              Hey there! My name's Tito, I'm a
+              <span style="font-weight: bolder">Junior Web Developer</span>.
+            </p>
+            <p class="col-md-12 col-12 text-start">
+              I've been in web development ever since college in 2017 and had 6
+              years of experience studying and working in this field. Learning
+              about the steps of web development, from collecting the user
+              requirement to building the web, really pique my interest to dive
+              even deeper in my work.
+            </p>
+            <p class="col-md-12 col-12 text-start">
+              Fast-forward to today, and I've had the privilage to work in a
+              <a
+                href="https://www.psn.co.id/"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >telecommunication company</a
+              >
+              for 2 years. In those time, I've the experience to broaden my
+              horizon in not just web development but also teamwork and coding
+              etiquette.
+            </p>
+            <p class="col-md-12 col-12 text-start">
+              Here are some of the languages and frameworks I've learned and
+              used recently:
+            </p>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-6">> JavaScript and TypeScript</div>
+                <div class="col-6">> SQL and NoSQL</div>
+                <div class="col-6">> Python</div>
+                <div class="col-6">> Java</div>
+                <div class="col-6">> Angular</div>
+                <div class="col-6">> CodeIgniter 3</div>
+                <div class="col-6">> Django</div>
+                <div class="col-6">> React</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

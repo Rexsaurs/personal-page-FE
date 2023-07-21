@@ -1,1 +1,285 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/variables.scss";
+
+body {
+  background-color: $background-light;
+  color: $text-light;
+  min-height: 100vh;
+}
+
+.bg-dark {
+  background-color: $background-dark !important;
+  color: $text-dark !important;
+}
+
+section {
+  min-height: 70vh;
+
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 6% 0;
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    padding: 20% 0;
+  }
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+// Style for primeNG Scroll panel //
+.p-card {
+  box-shadow: 0 0 20px 1px $primary;
+}
+
+.p-card-body {
+  height: 100%;
+}
+
+.p-scrollpanel {
+  p {
+    padding: 0.5rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &.custombar1 {
+    .p-scrollpanel-wrapper {
+      border-right: 9px solid var(--layer-1);
+    }
+
+    .p-scrollpanel-bar {
+      background-color: $accent;
+      opacity: 1;
+      transition: background-color 0.2s;
+      z-index: 1;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+// Style for primeNG Scroll panel //
+
+.big-header {
+  margin: 0px;
+  font-size: clamp(30px, 5vw, 50px);
+}
+
+.p-timeline .p-timeline-event-connector {
+  background-color: $base-color-dark !important;
+}
+
+.custombar1 {
+  height: 150px;
+}
+
+
+
+footer {
+  border-top: 2px solid $light-cyan !important;
+}
+
+.navbar {
+  border-bottom: 2px solid $light-cyan !important;
+}
+
+/* Link Styles */
+.link {
+  text-decoration: none;
+
+  color: $link;
+  font-weight: 700;
+
+  position: relative;
+}
+
+.link::after {
+
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: $light-cyan;
+  transition: opacity 300ms, transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.link:hover {
+  color: $light-cyan;
+}
+
+.link:hover::after,
+.link:focus::after {
+
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+  transform: scale(1);
+}
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
+  transition: $property $duration $ease;
+}
+
+//Animations//
+.btn-animate {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $primary;
+      border-radius: 1.625rem;
+
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $text-dark;
+
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $text-light;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .circle {
+      width: 100%;
+
+      .icon {
+        &.arrow {
+          background: $text-dark;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+
+    .button-text {
+      color: $text-dark;
+    }
+  }
+}
+
+%slide-shared {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s linear, opacity 1s linear, transform 1s;
+}
+
+
+.slide-right {
+  transform: translateX(-100px);
+  @extend %slide-shared;
+}
+
+.slide-left {
+  transform: translateX(100px);
+  @extend %slide-shared;
+}
+
+.slide-bottom {
+  transform: translateY(-100px);
+  @extend %slide-shared;
+}
+
+.slide-top {
+  transform: translateY(100px);
+  @extend %slide-shared;
+
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s linear, opacity 1s linear;
+}
+
+.visible {
+  transform: translate(0, 0);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+//Animations//

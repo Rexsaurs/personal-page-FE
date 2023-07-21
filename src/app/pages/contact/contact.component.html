@@ -1,0 +1,83 @@
+<section
+  id="contact"
+  appSectionObserver
+  #intersection="intersection"
+  (isIntersecting)="isIntersecting($event)"
+  [isContinuous]="true"
+  [threshold]="0.35"
+>
+  <div
+    class="main-panel slide-top"
+    [ngClass]="{ '': !onFragment, visible: visible }"
+  >
+    <div class="content-wrapper">
+      <div class="card">
+        <div class="card-inner pb-5 px-2">
+          <div class="row justify-content-lg-end justify-content-md-center">
+            <h2 class="d-flex justify-content-center col-12 my-4 fw-bolder">
+              03. Get In Touch
+            </h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-12 d-flex align-items-center">
+              <div class="row justify-content-center">
+                <p class="col-md-12 col-12 text-center">
+                  I'm always looking for new opportunities to broaden my horizon
+                  and knowledge in the tech industries, feel free to contact me.
+                </p>
+                <p class="col-md-12 col-12 text-center">
+                  Whether you have a question or just want to talk, I'll try to
+                  get back to you as fast as I can!
+                </p>
+                <button class="btn-animate learn-more mt-2" (click)="emailMe()">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text"
+                    >Message Me <i class="fa fa-paper-plane"></i
+                  ></span>
+                </button>
+
+                <div class="d-flex justify-content-between mt-4 row">
+                  <div class="col-lg-4 col-sm-12 text-center mb-2">
+                    <a
+                      href="https://github.com/Rexsaurs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-github fa-lg"
+                        ><span class="ms-2">Github</span></i
+                      >
+                    </a>
+                  </div>
+                  <div class="col-lg-4 col-sm-12 text-center mb-2">
+                    <a
+                      href="https://www.instagram.com/titorhen/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-instagram fa-lg"
+                        ><span class="ms-2">Instagram</span></i
+                      >
+                    </a>
+                  </div>
+                  <div class="col-lg-4 col-sm-12 text-center mb-2">
+                    <a
+                      href="https://www.linkedin.com/in/tito-rhenaldi-priono-612a77114/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-linkedin fa-lg"
+                        ><span class="ms-2">LinkedIn</span></i
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
